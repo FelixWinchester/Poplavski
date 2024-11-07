@@ -76,11 +76,11 @@ def print_results(vx, vy):
             max_x = vx[i]
             max_index = i
 
-    print(f"Максимальное отклонение: {max_deviation:.5f} в точке x = {max_x:.5f} (индекс {max_index})")
+    print(f"Максимальное отклонение: {max_deviation:.5f} \n Точка x: {max_x:.5f} (индекс {max_index})")
 
 
 def solve():
-    n = 10000
+    n = 1000000
     l, r = 0.0, T
     h = (r - l) / n
 
