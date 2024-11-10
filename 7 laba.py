@@ -1,3 +1,4 @@
+import time
 import math
 
 eps = 1e-6
@@ -76,11 +77,11 @@ def print_results(vx, vy):
             max_x = vx[i]
             max_index = i
 
-    print(f"Максимальное отклонение: {max_deviation:.5f} \n Точка x: {max_x:.5f} (индекс {max_index})")
+    print(f"Максимальное отклонение: {max_deviation:.10f} \n Точка x: {max_x:.5f} (индекс {max_index})")
 
 
 def solve():
-    n = 1000000
+    n = 9400000
     l, r = 0.0, T
     h = (r - l) / n
 
@@ -110,4 +111,16 @@ def solve():
 
 
 if __name__ == "__main__":
+    # Начало замера времени
+    start_time = time.time()
+
     solve()
+
+    # Конец замера времени
+    end_time = time.time()
+    
+    # Вычисляем и выводим время выполнения
+    execution_time = end_time - start_time
+    print(f"Время выполнения программы: {execution_time:.5f} секунд")
+
+    #При значении 9450000 программа ломается.
