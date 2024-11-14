@@ -66,7 +66,6 @@ def print_results(vx, vy):
 
         print()
 
-    # Find maximum deviation, its corresponding x, and index
     max_deviation = 0
     max_x = 0
     max_index = 0
@@ -124,3 +123,4 @@ if __name__ == "__main__":
     print(f"Время выполнения программы: {execution_time:.5f} секунд")
 
     #При значении 9450000 программа ломается.
+    #150+- секунд на выполнение программы
