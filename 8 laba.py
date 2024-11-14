@@ -85,7 +85,7 @@ def print_result(vx, vy):
         m = min(i + k, len(vx))
         for j in range(i, m):
             print(f"{vx[j]:>12.5f} | {vy[j]:>12.5f} | {check_y(vx[j]):>12.5f} | {(vy[j] - check_y(vx[j])):>16.5f}")
-        print()
+        print("-" * 66)
 
 
 def solve():
