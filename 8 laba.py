@@ -1,7 +1,7 @@
 import math
 from itertools import product
 
-V = 9.0
+V = 16.0
 T = V
 eps = 1e-6
 
@@ -19,15 +19,20 @@ def check_y(x):
 
 def phi(x, k):
     k += 1
-    return x ** (k + 1) * (x - T)
+    return x ** (k + 2) * (x - T)
 
 def phi1(x, k):
     k += 1
-    return x ** (k + 1) * (k + 2) - x ** k * (k + 1) * T
+    # Первая производная phi(x, k) = x ** (k + 2) * (x - T)
+    return (k + 2) * x ** (k + 1) * (x - T) + x ** (k + 2)
 
 def phi2(x, k):
     k += 1
-    return x ** k * (k + 2) * (k + 1) - x ** (k - 1) * (k + 1) * k * T
+    # Вторая производная phi(x, k) = x ** (k + 2) * (x - T)
+    term1 = (k + 2) * (k + 1) * x ** k * (x - T)
+    term2 = 2 * (k + 2) * x ** (k + 1)
+    term3 = x ** k * (k + 1) * k * T
+    return term1 + term2 - term3
 
 def gauss(sole):
     n = len(sole)
